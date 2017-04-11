@@ -13,10 +13,6 @@ struct tga_color green = {{{0, 255, 0}}, RGB};
 
 void draw_char(unsigned char ch, int idx, struct font_rep* rep, struct tga_image* tga)
 {
-    //check
-    if (ch < 32 || ch > 127) {
-        return;
-    }
     //almost correct
     unsigned char* ftrep = rep->ftrep; int ftw = rep->ftw; int fth = rep->fth;
     int x = ftw+ftw*(idx%(tga_width(tga)/ftw-2));
