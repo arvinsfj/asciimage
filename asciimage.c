@@ -39,7 +39,7 @@ int main(int ac, char **av)
     char *ctt;
     
     if (ac != 3) {
-        printf("usage: cat [filename] | ./asciimage -ft[1,2,3] [filename]\n");
+        printf("usage: cat [filename] | ./asciimage -ft[0,1,2] [filename]\n");
         exit(1);
     }
     
@@ -47,13 +47,13 @@ int main(int ac, char **av)
     filename = av[2];
     
     if (strncasecmp("-ft", arg, 3)) {
-        printf("usage: cat [filename] | ./asciimage -ft[1,2,3] [filename]\n");
+        printf("usage: cat [filename] | ./asciimage -ft[0,1,2] [filename]\n");
         exit(1);
     }
     
     int type = arg[3]-'0';
-    if (type<1 || type>3) {
-        printf("usage: cat [filename] | ./asciimage -ft[1,2,3] [filename]\n");
+    if (type<0 || type>2) {
+        printf("usage: cat [filename] | ./asciimage -ft[0,1,2] [filename]\n");
         exit(1);
     }
     

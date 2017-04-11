@@ -2,13 +2,6 @@
 #ifndef ASCIIFONT_INTERNAL_H
 #define ASCIIFONT_INTERNAL_H
 
-enum ASCII_Type
-{
-    ASCII_W8_H8 = 1,
-    ASCII_W8_H16,
-    ASCII_W16_H24,
-};
-
 /* asiic 8X8*/
 unsigned char  Ascii_W8_H8[] =         // ASCII
 {
@@ -1176,6 +1169,16 @@ unsigned char Ascii_W16_H24[] =              // ASCII
 	0x60,0xC0,0x40,0x40,0xC0,0x60,0xFF,0xE0,
 	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 	0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+};
+
+struct font_rep {
+    unsigned char* ftrep;
+    int ftw;
+    int fth;
+} ft_rp[] = {
+    {Ascii_W8_H8, 8, 8},
+    {Ascii_W8_H16, 8, 16},
+    {Ascii_W16_H24, 16, 24}
 };
 
 #endif
