@@ -32,7 +32,7 @@ void draw_char(unsigned char ch, int idx, struct font_rep* rep, struct tga_image
 void draw_txt(char* str, int len, int type, char* filename)
 {
     struct tga_image tga;
-    tga_create(1024, 768, RGB, &tga);
+    tga_create(1024, 768*2, RGB, &tga);
     struct font_rep rep = ft_rp[type];
     for (int i = 0; i < len; i++) {
         draw_char((unsigned char)str[i], i, &rep, &tga);
